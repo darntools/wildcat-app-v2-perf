@@ -406,7 +406,6 @@ export const LenderActiveMarketsTables = ({
             </Box>
           ) : (
             <DataGrid
-              disableVirtualization
               sx={clickableGridSx}
               rowHeight={66}
               rows={depositedMarkets}
@@ -444,7 +443,6 @@ export const LenderActiveMarketsTables = ({
             </Box>
           ) : (
             <DataGrid
-              disableVirtualization
               sx={clickableGridSx}
               rowHeight={66}
               rows={nonDepositedMarkets}

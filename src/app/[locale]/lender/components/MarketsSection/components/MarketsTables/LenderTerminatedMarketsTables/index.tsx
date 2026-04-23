@@ -330,7 +330,6 @@ export const LenderTerminatedMarketsTables = ({
           noMarketsSubtitle={t("dashboard.markets.noMarkets.closed.subtitle")}
         >
           <DataGrid
-            disableVirtualization
             sx={clickableGridSx}
             rowHeight={66}
             rows={prevActive}
@@ -354,7 +353,6 @@ export const LenderTerminatedMarketsTables = ({
           noMarketsSubtitle={t("dashboard.markets.noMarkets.closed.subtitle")}
         >
           <DataGrid
-            disableVirtualization
             sx={clickableGridSx}
             rowHeight={66}
             rows={neverActive}
