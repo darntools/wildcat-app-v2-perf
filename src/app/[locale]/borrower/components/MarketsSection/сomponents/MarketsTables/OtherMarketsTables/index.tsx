@@ -481,7 +481,6 @@ export const OtherMarketsTables = ({
           showNoFilteredMarkets
         >
           <DataGrid
-            disableVirtualization
             sx={DataGridSx}
             getRowHeight={() => "auto"}
             rows={selfOnboard}
@@ -509,7 +508,6 @@ export const OtherMarketsTables = ({
           showNoFilteredMarkets
         >
           <DataGrid
-            disableVirtualization
             sx={DataGridSx}
             getRowHeight={() => "auto"}
             rows={manual}
@@ -537,7 +535,6 @@ export const OtherMarketsTables = ({
           showNoFilteredMarkets
         >
           <DataGrid
-            disableVirtualization
             sx={DataGridSx}
             getRowHeight={() => "auto"}
             rows={terminated}

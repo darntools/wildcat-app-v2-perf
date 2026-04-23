@@ -460,7 +460,6 @@ export const OtherMarketsTables = ({
             </Box>
           ) : (
             <DataGrid
-              disableVirtualization
               sx={clickableGridSx}
               rowHeight={66}
               rows={selfOnboard}
@@ -496,7 +495,6 @@ export const OtherMarketsTables = ({
             </Box>
           ) : (
             <DataGrid
-              disableVirtualization
               sx={clickableGridSx}
               rowHeight={66}
               rows={manual}
@@ -523,7 +521,6 @@ export const OtherMarketsTables = ({
           showNoFilteredMarkets
         >
           <DataGrid
-            disableVirtualization
             sx={clickableGridSx}
             rowHeight={66}
             rows={terminated}
