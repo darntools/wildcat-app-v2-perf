@@ -1,0 +1,4551 @@
+[
+  {
+    "inputs": [],
+    "name": "archController",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "controllerFactory",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAllControllersDataForBorrowers",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "controller",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "controllerFactory",
+            "type": "address"
+          },
+          {
+            "internalType": "bool",
+            "name": "isRegisteredBorrower",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "hasDeployedController",
+            "type": "bool"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "feeRecipient",
+                "type": "address"
+              },
+              {
+                "internalType": "uint16",
+                "name": "protocolFeeBips",
+                "type": "uint16"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "originationFeeToken",
+                "type": "tuple"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originationFeeAmount",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct FeeConfiguration",
+            "name": "fees",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint32",
+                "name": "minimumDelinquencyGracePeriod",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint32",
+                "name": "maximumDelinquencyGracePeriod",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint16",
+                "name": "minimumReserveRatioBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "maximumReserveRatioBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "minimumDelinquencyFeeBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "maximumDelinquencyFeeBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint32",
+                "name": "minimumWithdrawalBatchDuration",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint32",
+                "name": "maximumWithdrawalBatchDuration",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint16",
+                "name": "minimumAnnualInterestBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "maximumAnnualInterestBips",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct MarketParameterConstraints",
+            "name": "constraints",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "marketToken",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "underlyingToken",
+                "type": "tuple"
+              },
+              {
+                "internalType": "address",
+                "name": "borrower",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "controller",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "feeRecipient",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "protocolFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyGracePeriod",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "withdrawalBatchDuration",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "reserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "annualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "temporaryReserveRatio",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalAnnualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalReserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "temporaryReserveRatioExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isClosed",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaleFactor",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "maxTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastAccruedProtocolFees",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedUnclaimedWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledPendingWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "pendingWithdrawalExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isDelinquent",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "timeDelinquent",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastInterestAccruedTimestamp",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint32[]",
+                "name": "unpaidWithdrawalBatchExpiries",
+                "type": "uint32[]"
+              },
+              {
+                "internalType": "uint256",
+                "name": "coverageLiquidity",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "borrowableAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquentDebt",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct MarketData[]",
+            "name": "markets",
+            "type": "tuple[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerOriginationFeeBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerOriginationFeeApproval",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct ControllerData[]",
+        "name": "data",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAllMarketsData",
+    "outputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+              },
+              {
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "symbol",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "decimals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isMock",
+                "type": "bool"
+              }
+            ],
+            "internalType": "struct TokenMetadata",
+            "name": "marketToken",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+              },
+              {
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "symbol",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "decimals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isMock",
+                "type": "bool"
+              }
+            ],
+            "internalType": "struct TokenMetadata",
+            "name": "underlyingToken",
+            "type": "tuple"
+          },
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "controller",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "feeRecipient",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "protocolFeeBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "delinquencyFeeBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "delinquencyGracePeriod",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "withdrawalBatchDuration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveRatioBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "annualInterestBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "temporaryReserveRatio",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "originalAnnualInterestBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "originalReserveRatioBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "temporaryReserveRatioExpiry",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isClosed",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaleFactor",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "maxTotalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledTotalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalAssets",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastAccruedProtocolFees",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedUnclaimedWithdrawals",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledPendingWithdrawals",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "pendingWithdrawalExpiry",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isDelinquent",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "timeDelinquent",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastInterestAccruedTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint32[]",
+            "name": "unpaidWithdrawalBatchExpiries",
+            "type": "uint32[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "coverageLiquidity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowableAssets",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "delinquentDebt",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct MarketData[]",
+        "name": "data",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "lender",
+        "type": "address"
+      }
+    ],
+    "name": "getAllMarketsDataWithLenderStatus",
+    "outputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "marketToken",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "underlyingToken",
+                "type": "tuple"
+              },
+              {
+                "internalType": "address",
+                "name": "borrower",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "controller",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "feeRecipient",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "protocolFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyGracePeriod",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "withdrawalBatchDuration",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "reserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "annualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "temporaryReserveRatio",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalAnnualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalReserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "temporaryReserveRatioExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isClosed",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaleFactor",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "maxTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastAccruedProtocolFees",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedUnclaimedWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledPendingWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "pendingWithdrawalExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isDelinquent",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "timeDelinquent",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastInterestAccruedTimestamp",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint32[]",
+                "name": "unpaidWithdrawalBatchExpiries",
+                "type": "uint32[]"
+              },
+              {
+                "internalType": "uint256",
+                "name": "coverageLiquidity",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "borrowableAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquentDebt",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct MarketData",
+            "name": "market",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "lender",
+                "type": "address"
+              },
+              {
+                "internalType": "bool",
+                "name": "isAuthorizedOnController",
+                "type": "bool"
+              },
+              {
+                "internalType": "enum AuthRole",
+                "name": "role",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledBalance",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedBalance",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "underlyingBalance",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "underlyingApproval",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct MarketLenderStatus",
+            "name": "lenderStatus",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct MarketDataWithLenderStatus[]",
+        "name": "data",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "lender",
+        "type": "address"
+      }
+    ],
+    "name": "getAllMarketsLenderStatus",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "lender",
+            "type": "address"
+          },
+          {
+            "internalType": "bool",
+            "name": "isAuthorizedOnController",
+            "type": "bool"
+          },
+          {
+            "internalType": "enum AuthRole",
+            "name": "role",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "underlyingBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "underlyingApproval",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct MarketLenderStatus[]",
+        "name": "status",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getArchControllerData",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "archController",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowersCount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address[]",
+            "name": "borrowers",
+            "type": "address[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "controllerFactoriesCount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address[]",
+            "name": "controllerFactories",
+            "type": "address[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "controllersCount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address[]",
+            "name": "controllers",
+            "type": "address[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "marketsCount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address[]",
+            "name": "markets",
+            "type": "address[]"
+          }
+        ],
+        "internalType": "struct ArchControllerData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "borrower",
+        "type": "address"
+      }
+    ],
+    "name": "getControllerDataForBorrower",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "controller",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "controllerFactory",
+            "type": "address"
+          },
+          {
+            "internalType": "bool",
+            "name": "isRegisteredBorrower",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "hasDeployedController",
+            "type": "bool"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "feeRecipient",
+                "type": "address"
+              },
+              {
+                "internalType": "uint16",
+                "name": "protocolFeeBips",
+                "type": "uint16"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "originationFeeToken",
+                "type": "tuple"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originationFeeAmount",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct FeeConfiguration",
+            "name": "fees",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint32",
+                "name": "minimumDelinquencyGracePeriod",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint32",
+                "name": "maximumDelinquencyGracePeriod",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint16",
+                "name": "minimumReserveRatioBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "maximumReserveRatioBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "minimumDelinquencyFeeBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "maximumDelinquencyFeeBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint32",
+                "name": "minimumWithdrawalBatchDuration",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint32",
+                "name": "maximumWithdrawalBatchDuration",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint16",
+                "name": "minimumAnnualInterestBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "maximumAnnualInterestBips",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct MarketParameterConstraints",
+            "name": "constraints",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "marketToken",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "underlyingToken",
+                "type": "tuple"
+              },
+              {
+                "internalType": "address",
+                "name": "borrower",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "controller",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "feeRecipient",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "protocolFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyGracePeriod",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "withdrawalBatchDuration",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "reserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "annualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "temporaryReserveRatio",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalAnnualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalReserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "temporaryReserveRatioExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isClosed",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaleFactor",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "maxTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastAccruedProtocolFees",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedUnclaimedWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledPendingWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "pendingWithdrawalExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isDelinquent",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "timeDelinquent",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastInterestAccruedTimestamp",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint32[]",
+                "name": "unpaidWithdrawalBatchExpiries",
+                "type": "uint32[]"
+              },
+              {
+                "internalType": "uint256",
+                "name": "coverageLiquidity",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "borrowableAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquentDebt",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct MarketData[]",
+            "name": "markets",
+            "type": "tuple[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerOriginationFeeBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerOriginationFeeApproval",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct ControllerData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "borrowers",
+        "type": "address[]"
+      }
+    ],
+    "name": "getControllersDataForBorrowers",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "controller",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "controllerFactory",
+            "type": "address"
+          },
+          {
+            "internalType": "bool",
+            "name": "isRegisteredBorrower",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "hasDeployedController",
+            "type": "bool"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "feeRecipient",
+                "type": "address"
+              },
+              {
+                "internalType": "uint16",
+                "name": "protocolFeeBips",
+                "type": "uint16"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "originationFeeToken",
+                "type": "tuple"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originationFeeAmount",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct FeeConfiguration",
+            "name": "fees",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint32",
+                "name": "minimumDelinquencyGracePeriod",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint32",
+                "name": "maximumDelinquencyGracePeriod",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint16",
+                "name": "minimumReserveRatioBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "maximumReserveRatioBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "minimumDelinquencyFeeBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "maximumDelinquencyFeeBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint32",
+                "name": "minimumWithdrawalBatchDuration",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint32",
+                "name": "maximumWithdrawalBatchDuration",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint16",
+                "name": "minimumAnnualInterestBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "maximumAnnualInterestBips",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct MarketParameterConstraints",
+            "name": "constraints",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "marketToken",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "underlyingToken",
+                "type": "tuple"
+              },
+              {
+                "internalType": "address",
+                "name": "borrower",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "controller",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "feeRecipient",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "protocolFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyGracePeriod",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "withdrawalBatchDuration",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "reserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "annualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "temporaryReserveRatio",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalAnnualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalReserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "temporaryReserveRatioExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isClosed",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaleFactor",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "maxTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastAccruedProtocolFees",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedUnclaimedWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledPendingWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "pendingWithdrawalExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isDelinquent",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "timeDelinquent",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastInterestAccruedTimestamp",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint32[]",
+                "name": "unpaidWithdrawalBatchExpiries",
+                "type": "uint32[]"
+              },
+              {
+                "internalType": "uint256",
+                "name": "coverageLiquidity",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "borrowableAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquentDebt",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct MarketData[]",
+            "name": "markets",
+            "type": "tuple[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerOriginationFeeBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerOriginationFeeApproval",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct ControllerData[]",
+        "name": "data",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "market",
+        "type": "address"
+      }
+    ],
+    "name": "getMarketData",
+    "outputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+              },
+              {
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "symbol",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "decimals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isMock",
+                "type": "bool"
+              }
+            ],
+            "internalType": "struct TokenMetadata",
+            "name": "marketToken",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+              },
+              {
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "symbol",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "decimals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isMock",
+                "type": "bool"
+              }
+            ],
+            "internalType": "struct TokenMetadata",
+            "name": "underlyingToken",
+            "type": "tuple"
+          },
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "controller",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "feeRecipient",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "protocolFeeBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "delinquencyFeeBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "delinquencyGracePeriod",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "withdrawalBatchDuration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveRatioBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "annualInterestBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "temporaryReserveRatio",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "originalAnnualInterestBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "originalReserveRatioBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "temporaryReserveRatioExpiry",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isClosed",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaleFactor",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "maxTotalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledTotalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalAssets",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastAccruedProtocolFees",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedUnclaimedWithdrawals",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledPendingWithdrawals",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "pendingWithdrawalExpiry",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isDelinquent",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "timeDelinquent",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastInterestAccruedTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint32[]",
+            "name": "unpaidWithdrawalBatchExpiries",
+            "type": "uint32[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "coverageLiquidity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowableAssets",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "delinquentDebt",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct MarketData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "lender",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "market",
+        "type": "address"
+      }
+    ],
+    "name": "getMarketDataWithLenderStatus",
+    "outputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "marketToken",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "underlyingToken",
+                "type": "tuple"
+              },
+              {
+                "internalType": "address",
+                "name": "borrower",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "controller",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "feeRecipient",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "protocolFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyGracePeriod",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "withdrawalBatchDuration",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "reserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "annualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "temporaryReserveRatio",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalAnnualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalReserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "temporaryReserveRatioExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isClosed",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaleFactor",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "maxTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastAccruedProtocolFees",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedUnclaimedWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledPendingWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "pendingWithdrawalExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isDelinquent",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "timeDelinquent",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastInterestAccruedTimestamp",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint32[]",
+                "name": "unpaidWithdrawalBatchExpiries",
+                "type": "uint32[]"
+              },
+              {
+                "internalType": "uint256",
+                "name": "coverageLiquidity",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "borrowableAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquentDebt",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct MarketData",
+            "name": "market",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "lender",
+                "type": "address"
+              },
+              {
+                "internalType": "bool",
+                "name": "isAuthorizedOnController",
+                "type": "bool"
+              },
+              {
+                "internalType": "enum AuthRole",
+                "name": "role",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledBalance",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedBalance",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "underlyingBalance",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "underlyingApproval",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct MarketLenderStatus",
+            "name": "lenderStatus",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct MarketDataWithLenderStatus",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "lender",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "market",
+        "type": "address"
+      }
+    ],
+    "name": "getMarketLenderStatus",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "lender",
+            "type": "address"
+          },
+          {
+            "internalType": "bool",
+            "name": "isAuthorizedOnController",
+            "type": "bool"
+          },
+          {
+            "internalType": "enum AuthRole",
+            "name": "role",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "underlyingBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "underlyingApproval",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct MarketLenderStatus",
+        "name": "status",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getMarketsCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "markets",
+        "type": "address[]"
+      }
+    ],
+    "name": "getMarketsData",
+    "outputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+              },
+              {
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "symbol",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "decimals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isMock",
+                "type": "bool"
+              }
+            ],
+            "internalType": "struct TokenMetadata",
+            "name": "marketToken",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+              },
+              {
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "symbol",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "decimals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isMock",
+                "type": "bool"
+              }
+            ],
+            "internalType": "struct TokenMetadata",
+            "name": "underlyingToken",
+            "type": "tuple"
+          },
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "controller",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "feeRecipient",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "protocolFeeBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "delinquencyFeeBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "delinquencyGracePeriod",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "withdrawalBatchDuration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveRatioBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "annualInterestBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "temporaryReserveRatio",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "originalAnnualInterestBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "originalReserveRatioBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "temporaryReserveRatioExpiry",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isClosed",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaleFactor",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "maxTotalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledTotalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalAssets",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastAccruedProtocolFees",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedUnclaimedWithdrawals",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledPendingWithdrawals",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "pendingWithdrawalExpiry",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isDelinquent",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "timeDelinquent",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastInterestAccruedTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint32[]",
+            "name": "unpaidWithdrawalBatchExpiries",
+            "type": "uint32[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "coverageLiquidity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowableAssets",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "delinquentDebt",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct MarketData[]",
+        "name": "data",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "lender",
+        "type": "address"
+      },
+      {
+        "internalType": "address[]",
+        "name": "markets",
+        "type": "address[]"
+      }
+    ],
+    "name": "getMarketsDataWithLenderStatus",
+    "outputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "marketToken",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "underlyingToken",
+                "type": "tuple"
+              },
+              {
+                "internalType": "address",
+                "name": "borrower",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "controller",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "feeRecipient",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "protocolFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyGracePeriod",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "withdrawalBatchDuration",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "reserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "annualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "temporaryReserveRatio",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalAnnualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalReserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "temporaryReserveRatioExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isClosed",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaleFactor",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "maxTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastAccruedProtocolFees",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedUnclaimedWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledPendingWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "pendingWithdrawalExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isDelinquent",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "timeDelinquent",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastInterestAccruedTimestamp",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint32[]",
+                "name": "unpaidWithdrawalBatchExpiries",
+                "type": "uint32[]"
+              },
+              {
+                "internalType": "uint256",
+                "name": "coverageLiquidity",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "borrowableAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquentDebt",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct MarketData",
+            "name": "market",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "lender",
+                "type": "address"
+              },
+              {
+                "internalType": "bool",
+                "name": "isAuthorizedOnController",
+                "type": "bool"
+              },
+              {
+                "internalType": "enum AuthRole",
+                "name": "role",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledBalance",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedBalance",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "underlyingBalance",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "underlyingApproval",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct MarketLenderStatus",
+            "name": "lenderStatus",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct MarketDataWithLenderStatus[]",
+        "name": "data",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "lender",
+        "type": "address"
+      },
+      {
+        "internalType": "address[]",
+        "name": "market",
+        "type": "address[]"
+      }
+    ],
+    "name": "getMarketsLenderStatus",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "lender",
+            "type": "address"
+          },
+          {
+            "internalType": "bool",
+            "name": "isAuthorizedOnController",
+            "type": "bool"
+          },
+          {
+            "internalType": "enum AuthRole",
+            "name": "role",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "underlyingBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "underlyingApproval",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct MarketLenderStatus[]",
+        "name": "status",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "start",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "end",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct SliceParameters",
+        "name": "borrowersSlice",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "start",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "end",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct SliceParameters",
+        "name": "controllerFactoriesSlice",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "start",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "end",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct SliceParameters",
+        "name": "controllersSlice",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "start",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "end",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct SliceParameters",
+        "name": "marketsSlice",
+        "type": "tuple"
+      }
+    ],
+    "name": "getPaginatedArchControllerData",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "archController",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowersCount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address[]",
+            "name": "borrowers",
+            "type": "address[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "controllerFactoriesCount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address[]",
+            "name": "controllerFactories",
+            "type": "address[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "controllersCount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address[]",
+            "name": "controllers",
+            "type": "address[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "marketsCount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address[]",
+            "name": "markets",
+            "type": "address[]"
+          }
+        ],
+        "internalType": "struct ArchControllerData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "start",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "end",
+        "type": "uint256"
+      }
+    ],
+    "name": "getPaginatedControllersDataForBorrowers",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "controller",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "controllerFactory",
+            "type": "address"
+          },
+          {
+            "internalType": "bool",
+            "name": "isRegisteredBorrower",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "hasDeployedController",
+            "type": "bool"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "feeRecipient",
+                "type": "address"
+              },
+              {
+                "internalType": "uint16",
+                "name": "protocolFeeBips",
+                "type": "uint16"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "originationFeeToken",
+                "type": "tuple"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originationFeeAmount",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct FeeConfiguration",
+            "name": "fees",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint32",
+                "name": "minimumDelinquencyGracePeriod",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint32",
+                "name": "maximumDelinquencyGracePeriod",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint16",
+                "name": "minimumReserveRatioBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "maximumReserveRatioBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "minimumDelinquencyFeeBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "maximumDelinquencyFeeBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint32",
+                "name": "minimumWithdrawalBatchDuration",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint32",
+                "name": "maximumWithdrawalBatchDuration",
+                "type": "uint32"
+              },
+              {
+                "internalType": "uint16",
+                "name": "minimumAnnualInterestBips",
+                "type": "uint16"
+              },
+              {
+                "internalType": "uint16",
+                "name": "maximumAnnualInterestBips",
+                "type": "uint16"
+              }
+            ],
+            "internalType": "struct MarketParameterConstraints",
+            "name": "constraints",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "marketToken",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "underlyingToken",
+                "type": "tuple"
+              },
+              {
+                "internalType": "address",
+                "name": "borrower",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "controller",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "feeRecipient",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "protocolFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyGracePeriod",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "withdrawalBatchDuration",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "reserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "annualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "temporaryReserveRatio",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalAnnualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalReserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "temporaryReserveRatioExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isClosed",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaleFactor",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "maxTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastAccruedProtocolFees",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedUnclaimedWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledPendingWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "pendingWithdrawalExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isDelinquent",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "timeDelinquent",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastInterestAccruedTimestamp",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint32[]",
+                "name": "unpaidWithdrawalBatchExpiries",
+                "type": "uint32[]"
+              },
+              {
+                "internalType": "uint256",
+                "name": "coverageLiquidity",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "borrowableAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquentDebt",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct MarketData[]",
+            "name": "markets",
+            "type": "tuple[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerOriginationFeeBalance",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerOriginationFeeApproval",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct ControllerData[]",
+        "name": "data",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "start",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "end",
+        "type": "uint256"
+      }
+    ],
+    "name": "getPaginatedMarketsData",
+    "outputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+              },
+              {
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "symbol",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "decimals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isMock",
+                "type": "bool"
+              }
+            ],
+            "internalType": "struct TokenMetadata",
+            "name": "marketToken",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+              },
+              {
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "symbol",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "decimals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isMock",
+                "type": "bool"
+              }
+            ],
+            "internalType": "struct TokenMetadata",
+            "name": "underlyingToken",
+            "type": "tuple"
+          },
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "controller",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "feeRecipient",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "protocolFeeBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "delinquencyFeeBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "delinquencyGracePeriod",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "withdrawalBatchDuration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveRatioBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "annualInterestBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "temporaryReserveRatio",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "originalAnnualInterestBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "originalReserveRatioBips",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "temporaryReserveRatioExpiry",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isClosed",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaleFactor",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "maxTotalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledTotalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalAssets",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastAccruedProtocolFees",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedUnclaimedWithdrawals",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledPendingWithdrawals",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "pendingWithdrawalExpiry",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isDelinquent",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint256",
+            "name": "timeDelinquent",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastInterestAccruedTimestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint32[]",
+            "name": "unpaidWithdrawalBatchExpiries",
+            "type": "uint32[]"
+          },
+          {
+            "internalType": "uint256",
+            "name": "coverageLiquidity",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowableAssets",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "delinquentDebt",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct MarketData[]",
+        "name": "data",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "lender",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "start",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "end",
+        "type": "uint256"
+      }
+    ],
+    "name": "getPaginatedMarketsDataWithLenderStatus",
+    "outputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "marketToken",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "address",
+                    "name": "token",
+                    "type": "address"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "string",
+                    "name": "symbol",
+                    "type": "string"
+                  },
+                  {
+                    "internalType": "uint256",
+                    "name": "decimals",
+                    "type": "uint256"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "isMock",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct TokenMetadata",
+                "name": "underlyingToken",
+                "type": "tuple"
+              },
+              {
+                "internalType": "address",
+                "name": "borrower",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "controller",
+                "type": "address"
+              },
+              {
+                "internalType": "address",
+                "name": "feeRecipient",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "protocolFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyFeeBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquencyGracePeriod",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "withdrawalBatchDuration",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "reserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "annualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "temporaryReserveRatio",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalAnnualInterestBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "originalReserveRatioBips",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "temporaryReserveRatioExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isClosed",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaleFactor",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "maxTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledTotalSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "totalAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastAccruedProtocolFees",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedUnclaimedWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledPendingWithdrawals",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "pendingWithdrawalExpiry",
+                "type": "uint256"
+              },
+              {
+                "internalType": "bool",
+                "name": "isDelinquent",
+                "type": "bool"
+              },
+              {
+                "internalType": "uint256",
+                "name": "timeDelinquent",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "lastInterestAccruedTimestamp",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint32[]",
+                "name": "unpaidWithdrawalBatchExpiries",
+                "type": "uint32[]"
+              },
+              {
+                "internalType": "uint256",
+                "name": "coverageLiquidity",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "borrowableAssets",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "delinquentDebt",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct MarketData",
+            "name": "market",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "lender",
+                "type": "address"
+              },
+              {
+                "internalType": "bool",
+                "name": "isAuthorizedOnController",
+                "type": "bool"
+              },
+              {
+                "internalType": "enum AuthRole",
+                "name": "role",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledBalance",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedBalance",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "underlyingBalance",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "underlyingApproval",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct MarketLenderStatus",
+            "name": "lenderStatus",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct MarketDataWithLenderStatus[]",
+        "name": "data",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "getTokenInfo",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "symbol",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "decimals",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isMock",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct TokenMetadata",
+        "name": "info",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "tokens",
+        "type": "address[]"
+      }
+    ],
+    "name": "getTokensInfo",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "symbol",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "decimals",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isMock",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct TokenMetadata[]",
+        "name": "info",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "market",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "expiry",
+        "type": "uint32"
+      }
+    ],
+    "name": "getWithdrawalBatchData",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "expiry",
+            "type": "uint32"
+          },
+          {
+            "internalType": "enum BatchStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledTotalAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledAmountBurned",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedAmountPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedTotalAmount",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct WithdrawalBatchData",
+        "name": "data",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "market",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "expiry",
+        "type": "uint32"
+      },
+      {
+        "internalType": "address",
+        "name": "lender",
+        "type": "address"
+      }
+    ],
+    "name": "getWithdrawalBatchDataWithLenderStatus",
+    "outputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "uint32",
+                "name": "expiry",
+                "type": "uint32"
+              },
+              {
+                "internalType": "enum BatchStatus",
+                "name": "status",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledTotalAmount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledAmountBurned",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedAmountPaid",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedTotalAmount",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct WithdrawalBatchData",
+            "name": "batch",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "lender",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledAmount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedAmountWithdrawn",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedAmountOwed",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "availableWithdrawalAmount",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct WithdrawalBatchLenderStatus",
+            "name": "lenderStatus",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct WithdrawalBatchDataWithLenderStatus",
+        "name": "status",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "market",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "expiry",
+        "type": "uint32"
+      },
+      {
+        "internalType": "address[]",
+        "name": "lenders",
+        "type": "address[]"
+      }
+    ],
+    "name": "getWithdrawalBatchDataWithLendersStatus",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "expiry",
+            "type": "uint32"
+          },
+          {
+            "internalType": "enum BatchStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledTotalAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledAmountBurned",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedAmountPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedTotalAmount",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct WithdrawalBatchData",
+        "name": "batch",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "lender",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedAmountWithdrawn",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedAmountOwed",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "availableWithdrawalAmount",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct WithdrawalBatchLenderStatus[]",
+        "name": "statuses",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "market",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32[]",
+        "name": "expiries",
+        "type": "uint32[]"
+      }
+    ],
+    "name": "getWithdrawalBatchesData",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "expiry",
+            "type": "uint32"
+          },
+          {
+            "internalType": "enum BatchStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledTotalAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledAmountBurned",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedAmountPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "normalizedTotalAmount",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct WithdrawalBatchData[]",
+        "name": "data",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "market",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32[]",
+        "name": "expiries",
+        "type": "uint32[]"
+      },
+      {
+        "internalType": "address",
+        "name": "lender",
+        "type": "address"
+      }
+    ],
+    "name": "getWithdrawalBatchesDataWithLenderStatus",
+    "outputs": [
+      {
+        "components": [
+          {
+            "components": [
+              {
+                "internalType": "uint32",
+                "name": "expiry",
+                "type": "uint32"
+              },
+              {
+                "internalType": "enum BatchStatus",
+                "name": "status",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledTotalAmount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledAmountBurned",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedAmountPaid",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedTotalAmount",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct WithdrawalBatchData",
+            "name": "batch",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "lender",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledAmount",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedAmountWithdrawn",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "normalizedAmountOwed",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "availableWithdrawalAmount",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct WithdrawalBatchLenderStatus",
+            "name": "lenderStatus",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct WithdrawalBatchDataWithLenderStatus[]",
+        "name": "statuses",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
